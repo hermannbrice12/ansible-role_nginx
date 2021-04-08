@@ -23,6 +23,6 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source-directory: 'ansible-collection_webapp'
-        destination-github-username: 'eazytrainnigfr'
+        destination-github-username: 'eazytrainingfr'
         destination-repository-name: 'ansible-collection_webapp'
         user-email: eazytrainingfr@gmail.com
