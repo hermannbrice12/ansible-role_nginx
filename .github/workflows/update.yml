@@ -23,5 +23,5 @@ jobs:
         git config --global user.email "eazytrainingfr@gmail.com"
         git config --global user.name "eazytrainingfr"
         git commit -m "update role nginx commit ${{ github.sha }}"
-        git remote set-url origin https://eazytrainingfr:${secrets.API_TOKEN_GITHUB}@github.com/eazytrainingfr/ansible-collection_webapp.git
+        git remote set-url origin https://eazytrainingfr:${{ secrets.API_TOKEN_GITHUB }}@github.com/eazytrainingfr/ansible-collection_webapp.git
         git push origin main
