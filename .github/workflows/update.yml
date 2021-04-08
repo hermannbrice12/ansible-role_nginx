@@ -1,0 +1,28 @@
+name: update collection
+
+'on':
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: retrieve collection code and update submodule
+	  run: |
+	    git clone https://github.com/eazytrainingfr/ansible-collection_webapp.git
+	    cd ansible-collection_webapp
+		  git submodule update
+
+    - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'ansible-collection_webapp'
+          destination-github-username: 'eazytrainnigfr'
+          destination-repository-name: 'ansible-collection_webapp'
+          user-email: eazytrainingfr@gmail.com
