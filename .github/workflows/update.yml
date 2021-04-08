@@ -20,10 +20,6 @@ jobs:
         git pull origin main
         cd ../..
         git add .
-        git config --global user.email "eazytrainingfr@gmail.com"
-        git config --global user.name "eazytrainingfr"
-        git commit -m "update role nginx commit ${{ github.sha }}"
-
 
     - name: Pushes to another repository
       uses: cpina/github-action-push-to-another-repository@master
@@ -35,3 +31,4 @@ jobs:
         destination-repository-name: 'ansible-collection_webapp'
         user-email: eazytrainingfr@gmail.com
         target-branch: main
+        commit-message: Update from $REPOSITORY_URL@commit
