@@ -20,15 +20,8 @@ jobs:
         git pull origin main
         cd ../..
         git add .
-
-    - name: Pushes to another repository
-      uses: cpina/github-action-push-to-another-repository@master
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      with:
-        source-directory: 'ansible-collection_webapp'
-        destination-github-username: 'eazytrainingfr'
-        destination-repository-name: 'ansible-collection_webapp'
-        user-email: eazytrainingfr@gmail.com
-        target-branch: main
-        commit-message: Update from $REPOSITORY_URL@commit
+        git config --global user.email "eazytrainingfr@gmail.com"
+        git config --global user.name "eazytrainingfr"
+        git commit -m "update role nginx commit ${{ github.sha }}"
+        git remote set-url origin https://eazytrainingfr:${secrets.API_TOKEN_GITHUB}@github.com/eazytrainingfr/ansible-collection_webapp.git
+        git push origin main
