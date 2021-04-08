@@ -17,9 +17,10 @@ jobs:
         cd ansible-collection_webapp
         git submodule update
         git add .
-        git commit -m "update role nginx commit ${{ github.sha }}"
         git config --global user.email "eazytrainingfr@gmail.com"
         git config --global user.name "eazytrainingfr"
+        git commit -m "update role nginx commit ${{ github.sha }}"
+
 
     - name: Pushes to another repository
       uses: cpina/github-action-push-to-another-repository@master
