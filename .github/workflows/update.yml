@@ -29,4 +29,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: main
         directory: ansible-collection_webapp
-        repository: https://github.com/eazytrainingfr/ansible-collection_webapp
+        repository: eazytrainingfr/ansible-collection_webapp
