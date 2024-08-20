@@ -38,4 +38,6 @@ jobs:
 
       - name: Run Molecule tests.
         run: |
+          molecule create
+          molecule converge
           molecule test
