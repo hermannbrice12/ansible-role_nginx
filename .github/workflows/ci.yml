@@ -36,5 +36,4 @@ jobs:
 
       - name: Run Molecule tests.
         run: |
-          molecule destroy --all
           molecule test
