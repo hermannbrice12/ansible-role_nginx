@@ -17,7 +17,7 @@ jobs:
     name: Molecule
     runs-on: ubuntu-20.04
     steps:
-      - name: Check out the codebase.
+      - name: Check out the codebase nginx.
         uses: actions/checkout@v4
         with:
           path: 'nginx'
